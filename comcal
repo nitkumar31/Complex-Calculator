@@ -1,0 +1,71 @@
+package com.comcal.java;
+import java.util.Scanner;
+
+public class ComCal {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Enter 1st value:");
+        String s1=sc.nextLine();
+        System.out.println("Enter 2nd value:");
+        String s2=sc.nextLine();
+        System.out.println("Choose operation (+,-,*,/):");
+        String op=sc.nextLine();
+     double res = 0;
+     try
+     {
+         switch(op)
+         {
+             case"+":
+                 res = addValues(s1,s2);
+             break;
+              case"-":
+                  res = subValues(s1,s2);
+             break;
+              case"*":
+                  res = mulValues(s1,s2);
+             break;
+              case"/": 
+                  res = divValues(s1,s2);
+             break;
+             default: 
+             System.out.println("Wrong operation!");
+             return;
+         }
+         System.out.println("Result:" +res);
+     } 
+     catch (Exception e)
+     { System.out.println("Number formatting exception" +e.getMessage());
+    }
+}
+private static double addValues(String s1, String s2)
+{
+    double a1=Double.parseDouble(s1);
+    double a2=Double.parseDouble(s2);
+    return a1+a2;
+}
+private static double subValues(String s1, String s2)
+{
+    double a1=Double.parseDouble(s1);
+    double a2=Double.parseDouble(s2);
+    return a1-a2;
+}
+private static double mulValues(String s1, String s2)
+{
+    double a1=Double.parseDouble(s1);
+    double a2=Double.parseDouble(s2);
+    return a1*a2;
+}
+private static double divValues(String s1, String s2)
+{
+    double a1=Double.parseDouble(s1);
+    double a2=Double.parseDouble(s2);
+    return a1/a2;
+}
+public static String getTnput(String prompt)
+{
+System.out.print(prompt);    
+Scanner sc=new Scanner(System.in);
+return sc.nextLine();
+}
+}
